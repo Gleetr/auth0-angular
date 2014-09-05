@@ -450,7 +450,7 @@
         var getDelegationTokenAsync = authUtils.promisify(config.auth0js.getDelegationToken, config.auth0js);
 
         return getDelegationTokenAsync(options).then(function (delegationResult) {
-          return delegationResult.id_token;
+          return delegationResult;
         });
       };
 
@@ -458,7 +458,7 @@
         var refreshTokenAsync = authUtils.promisify(config.auth0js.refreshToken, config.auth0js);
 
         return refreshTokenAsync(refresh_token || auth.refreshToken).then(function (delegationResult) {
-          return delegationResult.id_token;
+          return delegationResult;
         });
       };
 
@@ -466,7 +466,7 @@
         var renewIdTokenAsync = authUtils.promisify(config.auth0js.renewIdToken, config.auth0js);
 
         return renewIdTokenAsync(id_token || auth.idToken).then(function (delegationResult) {
-          return delegationResult.id_token;
+          return delegationResult;
         });
       };
 
